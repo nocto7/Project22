@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		470F8DD6226B43DE00D6F12A /* BeaconInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470F8DD5226B43DE00D6F12A /* BeaconInfo.swift */; };
+		470F8DDA226B522400D6F12A /* BeaconCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470F8DD9226B522400D6F12A /* BeaconCell.swift */; };
 		474A75D8226A1ABE00F049CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474A75D7226A1ABE00F049CA /* AppDelegate.swift */; };
 		474A75DA226A1ABE00F049CA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474A75D9226A1ABE00F049CA /* ViewController.swift */; };
 		474A75DD226A1ABE00F049CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 474A75DB226A1ABE00F049CA /* Main.storyboard */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		470F8DD5226B43DE00D6F12A /* BeaconInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconInfo.swift; sourceTree = "<group>"; };
+		470F8DD9226B522400D6F12A /* BeaconCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconCell.swift; sourceTree = "<group>"; };
 		474A75D4226A1ABE00F049CA /* Project22.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project22.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		474A75D7226A1ABE00F049CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		474A75D9226A1ABE00F049CA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +60,8 @@
 			children = (
 				474A75D7226A1ABE00F049CA /* AppDelegate.swift */,
 				474A75D9226A1ABE00F049CA /* ViewController.swift */,
+				470F8DD9226B522400D6F12A /* BeaconCell.swift */,
+				470F8DD5226B43DE00D6F12A /* BeaconInfo.swift */,
 				474A75DB226A1ABE00F049CA /* Main.storyboard */,
 				474A75DE226A1AC000F049CA /* Assets.xcassets */,
 				474A75E0226A1AC000F049CA /* LaunchScreen.storyboard */,
@@ -135,8 +141,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				470F8DDA226B522400D6F12A /* BeaconCell.swift in Sources */,
 				474A75DA226A1ABE00F049CA /* ViewController.swift in Sources */,
 				474A75D8226A1ABE00F049CA /* AppDelegate.swift in Sources */,
+				470F8DD6226B43DE00D6F12A /* BeaconInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
