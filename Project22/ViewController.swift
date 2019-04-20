@@ -21,8 +21,6 @@ class ViewController: UICollectionViewController, CLLocationManagerDelegate {
         locationManager?.delegate = self
         locationManager?.requestAlwaysAuthorization()
         
-        view.backgroundColor = .black
-        
         // set a default nothing has been found cell here probably...
     }
 
@@ -58,9 +56,10 @@ class ViewController: UICollectionViewController, CLLocationManagerDelegate {
             for possibleBeacon in beaconInformation {
                 if possibleBeacon.uuid == beacon.proximityUUID {
                     print("matched beacon \(possibleBeacon)")
+                    possibleBeacon.detected = true
                     possibleBeacon.proximity = beacon.proximity
                     possibleBeacon.delegate?.update(distance: beacon.proximity)
-                    collectionView.reloadData()
+                    //collectionView.reloadData()
                 }
             }
         }
@@ -71,13 +70,12 @@ class ViewController: UICollectionViewController, CLLocationManagerDelegate {
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "beacon", for: indexPath) as? BeaconCell else { fatalError("Unable to dequeue a beacon cell") }
+        cell.setup()
         cell.beaconInfo = beaconInformation[indexPath.row]
         cell.beaconInfo.delegate = cell
         cell.update(distance: cell.beaconInfo.proximity)
         return cell
     }
-
-
 
 }
 

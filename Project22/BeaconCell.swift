@@ -11,25 +11,35 @@ import CoreLocation
 
 class BeaconCell: UICollectionViewCell {
     @IBOutlet var distanceReading: UILabel!
+    @IBOutlet var circle: UIView!
     
     var beaconInfo: BeaconInfo!
+    
+    func setup() {
+        circle.layer.cornerRadius = 128
+        circle.backgroundColor = .black
+    }
     
     func update(distance: CLProximity) {
         print("updating a beacon cell for \(beaconInfo.shortName)")
         UIView.animate(withDuration: 1) {
             switch distance {
             case .far:
-                self.backgroundColor = .blue
-                self.distanceReading.text = "\(self.beaconInfo.shortName) FAR"
+                self.circle.backgroundColor = .blue
+                self.circle.transform = CGAffineTransform(scaleX: 0.2, y: 0.2)
+                self.distanceReading.text = "\(self.beaconInfo.shortName)\nFAR"
             case .near:
-                self.backgroundColor = .orange
-                self.distanceReading.text = "\(self.beaconInfo.shortName) NEAR"
+                self.circle.backgroundColor = .orange
+                self.circle.transform = CGAffineTransform(scaleX: 0.6, y: 0.6)
+                self.distanceReading.text = "\(self.beaconInfo.shortName)\nNEAR"
             case .immediate:
-                self.backgroundColor = .red
-                self.distanceReading.text = "\(self.beaconInfo.shortName) RIGHT HERE"
+                self.circle.backgroundColor = .red
+                self.circle.transform = CGAffineTransform(scaleX: 1, y: 1)
+                self.distanceReading.text = "\(self.beaconInfo.shortName)\nRIGHT HERE"
             default:
-                self.backgroundColor = .gray
-                self.distanceReading.text = "\(self.beaconInfo.shortName) UNKNOWN"
+                self.circle.backgroundColor = .gray
+                self.circle.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
+                self.distanceReading.text = "\(self.beaconInfo.shortName)\nUNKNOWN"
             }
         }
     }

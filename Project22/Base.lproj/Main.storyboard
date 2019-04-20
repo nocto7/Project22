@@ -18,22 +18,26 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="d1N-cp-uHI">
-                            <size key="itemSize" width="364" height="234"/>
+                            <size key="itemSize" width="256" height="256"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="beacon" id="VS0-n0-vyP" customClass="BeaconCell" customModule="Project22" customModuleProvider="target">
-                                <rect key="frame" x="25" y="0.0" width="364" height="234"/>
+                                <rect key="frame" x="79" y="0.0" width="256" height="256"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                    <rect key="frame" x="0.0" y="0.0" width="364" height="234"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="256" height="256"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UNKNOWN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hla-sO-frg">
-                                            <rect key="frame" x="86" y="93" width="192" height="48"/>
-                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZfY-NU-ONY">
+                                            <rect key="frame" x="0.0" y="0.0" width="256" height="256"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </view>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UNKNOWN" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hla-sO-frg">
+                                            <rect key="frame" x="60.5" y="111.5" width="135" height="33.5"/>
+                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="28"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -42,8 +46,14 @@
                                 <constraints>
                                     <constraint firstItem="hla-sO-frg" firstAttribute="centerY" secondItem="VS0-n0-vyP" secondAttribute="centerY" id="GAb-sm-cU2"/>
                                     <constraint firstItem="hla-sO-frg" firstAttribute="centerX" secondItem="VS0-n0-vyP" secondAttribute="centerX" id="T9A-mr-fc2"/>
+                                    <constraint firstItem="ZfY-NU-ONY" firstAttribute="leading" secondItem="VS0-n0-vyP" secondAttribute="leading" id="jiD-UF-aHp"/>
+                                    <constraint firstItem="ZfY-NU-ONY" firstAttribute="centerY" secondItem="VS0-n0-vyP" secondAttribute="centerY" id="lpd-3a-HNB"/>
+                                    <constraint firstItem="ZfY-NU-ONY" firstAttribute="centerX" secondItem="VS0-n0-vyP" secondAttribute="centerX" id="rGZ-Ur-apP"/>
+                                    <constraint firstItem="ZfY-NU-ONY" firstAttribute="top" secondItem="VS0-n0-vyP" secondAttribute="top" id="wwr-ye-bHf"/>
                                 </constraints>
+                                <size key="customSize" width="256" height="256"/>
                                 <connections>
+                                    <outlet property="circle" destination="ZfY-NU-ONY" id="bTQ-sh-AP2"/>
                                     <outlet property="distanceReading" destination="hla-sO-frg" id="wkr-nJ-58F"/>
                                 </connections>
                             </collectionViewCell>
